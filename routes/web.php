@@ -22,4 +22,7 @@ Route::get('/create', [MangaController::class, 'create']);
 Route::post('/store', [MangaController::class, 'store'])->name('manga.store');
 
 //Rota Editar
-Route::get('/edit', [MangaController::class, 'edit']);
+Route::get('/edit/{id}', [MangaController::class, 'edit']);
+
+//Rota Deletar
+Route::get('/delete/{id}', [MangaController::class, 'destroy']);

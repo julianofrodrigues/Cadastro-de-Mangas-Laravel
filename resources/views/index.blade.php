@@ -23,14 +23,14 @@
 
 
       @foreach($mangas as $manga)
-        <div class="col-6">
+        <div class="col-4">
               <div class="card text-white bg-dark mb-3" style="width: 18rem;">
-                <img class="card-img-top" src={{$manga->image}} alt={{$manga->name}}>
+                <img class="card-img-top" src="{{$manga->image}}" alt={{$manga->name}}>
               <div class="card-body">
                   <h5 class="card-title">{{$manga->name}}</h5>
                   <p class="card-text">{{$manga->description}}</p>
-                  <a href="#" class="btn btn-primary">Editar</a>
-                  <a href="#" class="btn btn-danger">Excluir</a>
+                  <a href="/edit/{{$manga->id}}" class="btn btn-primary">Editar</a>
+                  <a href="/delete/{{$manga->id}}" method="get" class="btn btn-danger">Excluir</a>
               </div>
             </div>
         </div>

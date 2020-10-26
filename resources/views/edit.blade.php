@@ -27,17 +27,18 @@
 
                     <div class="form-group">
                         <label for="name">Titulo</label>
-                        <input class="form-control" id="name" require>
+                        <input class="form-control" id="name" name="name" value="{{$manga->name}}" require>
                     </div>
 
                     <div class="form-group">
                         <label for="description">Descrição</label>
-                        <textarea class="form-control" id="description" rows="3" require></textarea>
+                        <textarea class="form-control" id="description" name="description"  rows="3" require>{{$manga->description}}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="image">Imagens</label>
-                        <input type="file" class="form-control-file" id="image" require>
+                        <input class="form-control" id="image" value="{{$manga->image}}" name="image" require>
+                        <!-- <input type="file" class="form-control-file" id="image" name="image" require> -->
                     </div>
                     
                     <button type="submit" class="btn btn-success">Editar</button>

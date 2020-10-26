@@ -26,8 +26,11 @@ class MangaController extends Controller
         $manga->save();
         return redirect()->route('index')->with('message', 'Manga cadastrado com sucesso!');
     }
-    public function edit() {
-        return view('edit');
+    public function edit($id) {
+        $manga = Manga::findOrFail($id);
+        return view('edit', [
+            'manga'=>$manga
+        ]);
     }
 
     public function destroy($id) {
