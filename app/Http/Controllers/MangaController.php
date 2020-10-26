@@ -33,6 +33,15 @@ class MangaController extends Controller
         ]);
     }
 
+    public function update(Request $request, $id) {
+        $manga = Manga::findOrFail($id); 
+        $manga->name = $request->name;
+        $manga->description = $request->description;
+        $manga->image = $request->image;
+        $manga->save();
+        return redirect()->route('index')->with('message', 'Manga alterado com sucesso!');
+    }
+
     public function destroy($id) {
         $manga = Manga::findOrFail($id);
         $manga->delete();

@@ -23,7 +23,7 @@
             <div class="card-body">
                 <h5 class="card-title">Edição</h5>
                 
-                    <form>
+                    <form method="post" action="/update/{{$manga->id}}" enctype="multipart/form-data">{{ csrf_field() }}
 
                     <div class="form-group">
                         <label for="name">Titulo</label>

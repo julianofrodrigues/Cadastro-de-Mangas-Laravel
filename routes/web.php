@@ -23,6 +23,8 @@ Route::post('/store', [MangaController::class, 'store'])->name('manga.store');
 
 //Rota Editar
 Route::get('/edit/{id}', [MangaController::class, 'edit']);
+Route::post('/update/{id}', [MangaController::class, 'update']);
+
 
 //Rota Deletar
 Route::get('/delete/{id}', [MangaController::class, 'destroy']);
