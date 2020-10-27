@@ -37,8 +37,8 @@
 
                     <div class="form-group">
                         <label for="image">Imagens</label>
-                        <input class="form-control" id="image" name="image" require>
-                        <!-- <input type="file" class="form-control-file" id="image" require> -->
+                        <!-- <input class="form-control" id="image" name="image" require> -->
+                        <input type="file" class="form-control-file" id="image" name="image" require>
                     </div>
                     
                     <button type="submit" class="btn btn-primary">Cadastrar</button>

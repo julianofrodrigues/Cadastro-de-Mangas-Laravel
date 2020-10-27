@@ -24,7 +24,7 @@
       @foreach($mangas as $manga)
         <div class="col-4">
               <div class="card text-white bg-dark mb-3" style="width: 18rem;">
-                <img class="card-img-top" src="{{$manga->image}}" alt={{$manga->name}}>
+                <img class="card-img-top" src="{{ url("capas/{$manga->image}") }}" />
               <div class="card-body">
                   <h5 class="card-title">{{$manga->name}}</h5>
                   <p class="card-text">{{$manga->description}}</p>
@@ -58,7 +58,6 @@
             </div>
           </div>
       @endforeach
-
       </div>
     </div>
     </div>
