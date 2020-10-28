@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Str;
 
+use Illuminate\Support\Facades\Storage;
+
 use App\Models\Manga;
 
 
@@ -60,9 +62,18 @@ class MangaController extends Controller
     }
 
     public function destroy($id) {
-        $manga = Manga::findOrFail($id);
-        $manga->delete();
-        return redirect()->route('index')->with('message', 'Manga excluído com sucesso!');
+        //Deletar dados sem apagar a imagem;
+        // $manga = Manga::findOrFail($id);
+        // $manga->delete();
+
+        //Deletar dados com imagens do dado desejado no storage
+        if(!$manga = Manga::find($id))
+            return redirect()->back();
+        if($manga->delete()){
+            Storage::delete("public/capas/{$manga->image}");
+            return redirect()->route('index')->with('message', 'Manga excluído com sucesso!');
+        }
+        return redirect()->back()->with('error', 'Falha ao deletar!');
     }
 
 }
